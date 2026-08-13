@@ -23,3 +23,9 @@ head_sampling_rate = 1
 [[send_email]]
 name = "EMAIL"
 remote = true
+
+[[kv_namespaces]]
+binding = "HEARTBEAT_KV"
+
+[triggers]
+crons = ["*/5 * * * *"]

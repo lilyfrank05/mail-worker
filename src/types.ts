@@ -20,6 +20,7 @@ export interface SendEmailBinding {
 /** Worker bindings and secrets. EMAIL_WORKER_API_KEY and FROM_ADDRESS are set at runtime. */
 export type Env = {
   EMAIL: SendEmailBinding;
+  HEARTBEAT_KV: KVNamespace;
   EMAIL_WORKER_API_KEY: string;
   FROM_ADDRESS: string;
 };
