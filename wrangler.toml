@@ -2,6 +2,10 @@ name = "mail-worker"
 main = "src/index.ts"
 compatibility_date = "2026-08-13"
 
+[observability]
+enabled = false
+invocation_logs = true
+
 # Uncomment if your API token is not scoped to exactly one account:
 # account_id = "your-account-id"
 
