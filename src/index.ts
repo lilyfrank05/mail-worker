@@ -47,12 +47,25 @@ export default {
       return json({ success: false, error: "Unauthorized" }, 401);
     }
 
+    const rawBody = await request.text();
+    console.log(
+      "Request:",
+      request.method,
+      url.pathname,
+      "Content-Type:",
+      request.headers.get("content-type"),
+      "Body:",
+      rawBody,
+    );
+
     let payload: unknown;
     try {
-      payload = await request.json();
+      payload = JSON.parse(rawBody);
     } catch {
       return json({ success: false, error: "Invalid JSON body" }, 400);
     }
+
+    console.log("Parsed payload:", JSON.stringify(payload));
 
     const validated = validateEmailRequest(payload);
     if (!validated.ok) {
