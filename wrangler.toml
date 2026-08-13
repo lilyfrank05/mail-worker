@@ -22,3 +22,4 @@ head_sampling_rate = 1
 
 [[send_email]]
 name = "EMAIL"
+remote = true
