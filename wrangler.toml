@@ -28,4 +28,4 @@ remote = true
 binding = "HEARTBEAT_KV"
 
 [triggers]
-crons = ["*/5 * * * *"]
+crons = ["5 * * * *"]
