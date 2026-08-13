@@ -1,0 +1,9 @@
+name = "mail-worker"
+main = "src/index.ts"
+compatibility_date = "2026-08-13"
+
+# Uncomment if your API token is not scoped to exactly one account:
+# account_id = "your-account-id"
+
+[[send_email]]
+name = "EMAIL"

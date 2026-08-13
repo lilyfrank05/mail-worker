@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: deploy
+          secrets: |
+            EMAIL_WORKER_API_KEY
+            FROM_ADDRESS
+        env:
+          EMAIL_WORKER_API_KEY: ${{ secrets.EMAIL_WORKER_API_KEY }}
+          FROM_ADDRESS: ${{ secrets.FROM_ADDRESS }}

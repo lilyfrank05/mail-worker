@@ -1,0 +1,6 @@
+# Copy to .dev.vars for `wrangler dev`; replace with real values.
+# In production, set these with:
+#   npx wrangler secret put EMAIL_WORKER_API_KEY
+#   npx wrangler secret put FROM_ADDRESS
+EMAIL_WORKER_API_KEY=replace-with-your-api-key
+FROM_ADDRESS=noreply@yourdomain.com
